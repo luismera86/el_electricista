@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  .logo {
+    width: 25rem;
+    align-self: center;
+    margin-top: 1rem;
+  }
+}
