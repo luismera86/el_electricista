@@ -18,7 +18,7 @@ const NavBar = () => {
         </li>
       </ul>
       <section className="acount">
-        <a href="#">INICIAR SECSION</a>
+        <a href="#">INICIAR SESION</a>
         <CardWidget />
       </section>
     </nav>

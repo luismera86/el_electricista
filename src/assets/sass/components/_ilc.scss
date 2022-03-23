@@ -1,7 +1,66 @@
 .ilc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 3rem;
-  font-size: 4rem;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  .saludo {
+    font-size: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+  }
+}
+
+.counter {
+  width: 30rem;
+  height: 30rem;
+  border: solid 2px #2872b7;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 1rem;
+  margin-top: 5rem;
+  border-radius: 0.7rem;
+
+  .counterBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 2px #2872b7;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    .btnSum {
+      font-size: 2rem;
+      color: #2872b7;
+      &:hover {
+        color: black;
+        svg {
+          padding: 3rem;
+        }
+      }
+    }
+    .countResult {
+      font-size: 2rem;
+      color: #2872b7;
+    }
+    .btnRes {
+      font-size: 2rem;
+      color: #2872b7;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+  .btnAddCart {
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: #2872b7;
+    background-color: transparent;
+    border: solid 2px #2872b7;
+    border-radius: 0.5rem;
+    &:hover {
+      background-color: #2872b7;
+      color: white;
+    }
+  }
 }
