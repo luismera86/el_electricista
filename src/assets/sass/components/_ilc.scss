@@ -32,20 +32,25 @@
     .btnSum {
       font-size: 2rem;
       color: #2872b7;
+      background-color: white;
+      border: none;
+      cursor: pointer;
       &:hover {
         color: black;
-        svg {
-          padding: 3rem;
-        }
+        
       }
     }
     .countResult {
       font-size: 2rem;
       color: #2872b7;
+      
     }
     .btnRes {
       font-size: 2rem;
       color: #2872b7;
+      background-color: white;
+      border: none;
+      cursor: pointer;
       &:hover {
         color: black;
       }
@@ -58,6 +63,7 @@
     background-color: transparent;
     border: solid 2px #2872b7;
     border-radius: 0.5rem;
+    cursor: pointer;
     &:hover {
       background-color: #2872b7;
       color: white;
