@@ -5,20 +5,20 @@ const NavBar = () => {
     <nav>
       <ul>
         <li>
-          <a href="#">INICIO</a>
+          <a href='#!'>INICIO</a>
         </li>
         <li>
-          <a href="#">PRODUCTOS</a>
+          <a href="#!">PRODUCTOS</a>
         </li>
         <li>
-          <a href="#">NOSOTROS</a>
+          <a href="#!">NOSOTROS</a>
         </li>
         <li>
-          <a href="#">CONTACTO</a>
+          <a href="#!">CONTACTO</a>
         </li>
       </ul>
       <section className="acount">
-        <a href="#">INICIAR SESION</a>
+        <a href="#!">INICIAR SESION</a>
         <CardWidget />
       </section>
     </nav>

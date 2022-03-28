@@ -1,5 +1,4 @@
 import React from "react";
-import styledComponents from "styled-components";
 
 import ItemCount from "./ItemCount";
 
