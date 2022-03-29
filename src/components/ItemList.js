@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
+
 import { Item } from './Item'
 
-export const ItemList = () => {
-    const [productos, setProductos] = useState([])
+export const ItemList = ({productos}) => {
 
-    
 
   return (
-    <>
-        <Item productos={productos} setProductos={setProductos} />
-    </>
+    <div className='items-container'>
+      {productos.map(products => 
+        <Item key={products.id} products={products} />
+      )}
+    </div>
   )
 }
-

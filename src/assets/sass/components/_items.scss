@@ -1,0 +1,30 @@
+
+.item{
+    border: solid 2px #2872b700;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    margin-right: 5rem;
+    box-shadow: 3px 3px 10px #00000067;
+    padding: 3rem;
+    border-radius: 1rem;
+    transition: 300ms;
+    &:hover{
+        box-shadow: 6px 6px 20px #000000bb;
+    }
+    h2{
+        font-size: 1.8rem;
+    }
+    p{
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    h4{
+        font-size: 1.5rem;
+    }
+    .img-producto{
+        width: 15rem;
+    }
+    }
+
+
+

@@ -1,22 +1,16 @@
+import React from 'react'
 
-export const Item = ({productos, setProductos}) => {
-    
-    
-    const producto = {
-        id: 55, 
-        title: 'Interruptor Termomágnetico 10A', 
-        description: 'Interruptor Termomágnetico 10A', 
-        price: 1800, 
-        //Insertar la Imagen del producto
-    }
+export const Item = ({products}) => {
 
-    setProductos([...productos, producto])
+  const {id, title, description, price, pictureUrl} = products
 
-
+  
   return (
-
-    <div>
-        {/* Mostrar los detalles del producto  */}
-    </div> 
+    <div className='item'>
+      <h2>{title}</h2>
+      <img className='img-producto' src={pictureUrl} alt="" />
+      <p>{description}</p>
+      <h4>Pecio ${price}</h4>
+    </div>
   )
 }

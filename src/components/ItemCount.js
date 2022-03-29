@@ -4,9 +4,9 @@ import React, { useState } from "react";
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
 
-  const btnSum = () => setCount(count + 1);
+  const btnSum = () => count < stock ? setCount(count + 1) : setCount(stock);
   const btnRes = () => count >= 1 ? setCount(count - 1) : setCount(0);
-  const addCart = () => count <= stock ? onAdd(count) : alert(`Supera el stock disponible solo quedan ${stock} unidades`);
+  const addCart = () => count <= stock && onAdd(count);
   
   return (
     <div className="counter">
