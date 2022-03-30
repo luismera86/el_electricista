@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Item = ({products}) => {
 
-  const {id, title, description, price, pictureUrl} = products
+  const {title, description, price, pictureUrl} = products
 
   
   return (

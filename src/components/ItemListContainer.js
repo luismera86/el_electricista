@@ -39,6 +39,7 @@ const productosIniciales = [
 const promesa = new Promise((res) => {
   setTimeout(() => {
     res(productosIniciales)
+    
   }, 2000)
 }) 
 
@@ -48,13 +49,15 @@ const promesa = new Promise((res) => {
 const ItemListContainer = ({ saludo }) => {
 
   const [productos, setProductos] = useState([])
+  const [carga, setCarga] = useState(true)
 
   useEffect(() => {
-    promesa.then(productos => setProductos(productos) )
-    
+    promesa.then(productos => {
+     setProductos(productos) 
+      setCarga(false)}) 
   }, [])
 
-
+  
 
   
   //const onAdd = (count) => {
@@ -63,6 +66,7 @@ const ItemListContainer = ({ saludo }) => {
   return (
     <div className="ilc">
       <p className="saludo">{saludo}</p>
+      {carga && <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="cargando" />}
       <ItemList productos={productos} />
     </div>
   );
