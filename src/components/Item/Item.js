@@ -1,4 +1,4 @@
-
+import './Item.scss'
 export const Item = ({products}) => {
 
   const {title, description, price, pictureUrl} = products

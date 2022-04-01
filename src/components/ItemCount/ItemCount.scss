@@ -1,0 +1,60 @@
+.counter {
+    width: 30rem;
+    height: 30rem;
+    border: solid 2px #2872b7;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 1rem;
+    margin-top: 5rem;
+    border-radius: 0.7rem;
+  
+    .counterBox {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      border: solid 2px #2872b7;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      .btnSum {
+        font-size: 2rem;
+        color: #2872b7;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        &:hover {
+          color: black;
+          
+        }
+      }
+      .countResult {
+        font-size: 2rem;
+        color: #2872b7;
+        
+      }
+      .btnRes {
+        font-size: 2rem;
+        color: #2872b7;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        &:hover {
+          color: black;
+        }
+      }
+    }
+    .btnAddCart {
+      margin-top: 2rem;
+      font-size: 2rem;
+      color: #2872b7;
+      background-color: transparent;
+      border: solid 2px #2872b7;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      &:hover {
+        background-color: #2872b7;
+        color: white;
+      }
+    }
+  }

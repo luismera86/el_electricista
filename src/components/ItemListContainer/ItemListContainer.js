@@ -1,3 +1,4 @@
+import './ItemListContainer.scss'
 import { useEffect, useState } from "react";
 
 //import ItemCount from "./ItemCount";
