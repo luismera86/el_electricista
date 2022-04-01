@@ -1,9 +1,8 @@
-import React from "react";
-import Header from "./components/Header";
-import "./assets/sass/style.scss";
-import ItemListContainer from "./components/ItemListContainer";
+
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import { BrowserRouter } from "react-router-dom";
-import { ItemDetailContainer } from "./components/ItemDetailContainer";
+import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
+import Header from "./components/Header/Header";
 
 function App() {
   return (

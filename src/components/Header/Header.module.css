@@ -1,0 +1,12 @@
+
+.header {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+.logo {
+    width: 33rem;
+    align-self: center;
+    margin-top: 1rem;
+  }

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 //import ItemCount from "./ItemCount";
-import { ItemList } from "./ItemList";
+import { ItemList } from "../ItemList/ItemList";
 
 
 const productosIniciales = [
