@@ -1,28 +1,28 @@
+import styled from './ItemDetail.module.css'
 
-import './ItemDetail.scss'
-
-export const ItemDetail = ({producto}) => {
-
-    const { nombre, precio, img, descripcion, categoria, stock } = producto
-  return (
-    <div className="detailConteiner">
-        <div className="product">
-            <img src={img} />
-            <div>
-                <h4>Categoría/ {categoria}</h4>
-                <h2>{nombre}</h2>
-                <p>Precio {precio}</p>
-            </div>
-            <section>
-                <h2>Fecha de envío 10 de Abril</h2>
-                <p>Costo de envio $899</p>
-                <p>Stock disponible {stock}</p>
-                <button type="button">Comprar ahora</button>       
-            </section>
-        </div>
-        <div className='descriptionItem'>
-            <p>{descripcion}</p>
-        </div>
-    </div>
-  )
+export const ItemDetail = ({ producto }) => {
+	const { nombre, precio, img, descripcion, categoria, stock } = producto
+	return (
+		<div className={styled.detailConteiner}>
+			<div className={styled.product}>
+				<img className={styled.imgProduct} src={img} />
+				<div className={styled.productBox}>
+					<h4 className={styled.productCategorie}>Categoría/ {categoria}</h4>
+					<h2 className={styled.nameProduct}>{nombre}</h2>
+					<p className={styled.priceProduct}>Precio {precio}</p>
+				</div>
+				<section className={styled.buysBox}>
+					<h2 className={styled.shippingDate}>Fecha de envío 10 de Abril</h2>
+					<p className={styled.shippingCost}>Costo de envio $899</p>
+					<p className={styled.availableStock}>Stock disponible {stock}</p>
+					<button className={styled.buysButton} type='button'>
+						Comprar ahora
+					</button>
+				</section>
+			</div>
+			<div className={styled.descriptionBox}>
+				<p className={styled.descriptionProduct}>{descripcion}</p>
+			</div>
+		</div>
+	)
 }
