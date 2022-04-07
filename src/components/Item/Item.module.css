@@ -1,4 +1,10 @@
 .item {
+	display: flex;
+	flex-direction: column;
+	height: 30rem;
+	width: 13rem;
+	justify-content: space-between;
+	align-items: center;
 	border: solid 2px #2872b700;
 	margin-bottom: 2rem;
 	margin-top: 2rem;
@@ -8,6 +14,7 @@
 	border-radius: 0.7rem;
 	transition: 500ms;
 	font-family: Helvetica, sans-serif;
+	cursor: pointer;
 }
 
 .h2 {
@@ -28,4 +35,18 @@
 
 .h4 {
 	font-size: 1.2rem;
+}
+
+.cardLink {
+	text-decoration: none;
+	color: black;
+}
+
+.button {
+	width: 100%;
+	background-color: white;
+	border: 1px solid black;
+	padding: 0.3rem 1rem;
+	box-shadow: 1px 1px 2px #00000067;
+	cursor: pointer;
 }
