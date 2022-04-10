@@ -1,27 +1,26 @@
 import { useState } from 'react'
 import styled from './ItemCount.module.css'
 
-const ItemCount = ({ stock, initial, onAdd }) => {
-	const [count, setCount] = useState(initial)
+const ItemCount = ({ producto, onAdd}) => {
+	const { stock } = producto
+	const [count, setCount] = useState(1)
 
 	const btnSum = () => (count < stock ? setCount(count + 1) : setCount(stock))
 	const btnRes = () => (count >= 1 ? setCount(count - 1) : setCount(0))
-	const addCart = () => count <= stock && onAdd(count)
-	/* 
-! Hay que modificar las clases para adaptarlas a css modules
-*/
+	const addCart = () => (count <= stock && onAdd(false, count))
+	
 	return (
-		<div className='counter'>
-			<div className='counterBox'>
-				<button className='btnSum' onClick={btnSum}>
+		<div>
+			<div className={styled.counterBox}>
+				<button className={styled.btnSum} onClick={btnSum}>
 					+
 				</button>
-				<p className='countResult'>{count}</p>
-				<button className='btnRes' onClick={btnRes}>
+				<p className={styled.countResult}>{count}</p>
+				<button className={styled.btnRes} onClick={btnRes}>
 					-
 				</button>
 			</div>
-			<button onClick={addCart} className='btnAddCart'>
+			<button onClick={addCart} className={styled.btnAddCart}>
 				Agregar al carrito
 			</button>
 		</div>

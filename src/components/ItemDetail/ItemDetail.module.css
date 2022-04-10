@@ -33,7 +33,10 @@
 }
 
 .buysBox {
-	padding-left: 6rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
 }
 
 .nameProduct {
@@ -54,18 +57,20 @@
 }
 
 .buysButton {
-	margin-top: 10rem;
 	background-color: #2872b7;
 	color: white;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	padding: 1rem;
 	border-radius: 0.5rem;
 	cursor: pointer;
 	transition: 500ms;
+	text-decoration: none;
+	text-align: center;
 }
 
 .buysButton:hover {
 	background-color: #175ea0;
+	
 }
 
 .descriptionBox {
@@ -75,3 +80,10 @@
 .descriptionProduct {
 	padding-right: 8rem;
 }
+
+.intemsCart{
+	color: rgb(15, 148, 48);
+	font-weight: 800;
+}
+
+

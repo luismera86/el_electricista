@@ -30,7 +30,6 @@ export const ItemDetail = ({ producto }) => {
 					{state && <ItemCount producto={producto} onAdd={onAdd} />  }
 					{state === false && <p className={styled.intemsCart}>Items en carrito {intemsCart}</p>}
 					
-    
 					<Link className={styled.buysButton} type='button' to='/cart'>
 						Comprar ahora
 					</Link>
