@@ -1,65 +1,53 @@
-.counter {
-	width: 30rem;
-	height: 30rem;
-	border: solid 2px #2872b7;
-	display: flex;
-	flex-direction: column;
-	justify-content: end;
-	padding: 1rem;
-	margin-top: 5rem;
-	border-radius: 0.7rem;
-}
-
 .counterBox {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
-	border: solid 2px #2872b7;
-	border-radius: 0.5rem;
-	padding: 1rem;
 }
 
 .btnSum {
-	font-size: 2rem;
-	color: #2872b7;
-	background-color: white;
+	font-size: 1.2rem;
+	color: white;
+	background-color: #2872b7;
 	border: none;
 	cursor: pointer;
+	padding: 0.1rem 1rem;
+	transition: 500ms;
 }
 
 .btnSum:hover {
-	color: black;
+	background-color: #175ea0;
 }
 
 .countResult {
-	font-size: 2rem;
+	font-size: 1.2rem;
 	color: #2872b7;
 }
 
 .btnRes {
-	font-size: 2rem;
-	color: #2872b7;
-	background-color: white;
+	font-size: 1.2rem;
+	color: white;
+	background-color: #2872b7;
 	border: none;
 	cursor: pointer;
+	padding: 0.1rem 1rem;
+	transition: 500ms;
 }
 
 .btnRes:hover {
-	color: black;
+	background-color: #175ea0;
 }
 
 .btnAddCart {
-	margin-top: 2rem;
-	font-size: 2rem;
-	color: #2872b7;
-	background-color: transparent;
-	border: solid 2px #2872b7;
+	background-color: #2872b7;
+	color: white;
+	font-size: 1rem;
+	padding: 1rem;
 	border-radius: 0.5rem;
 	cursor: pointer;
+	transition: 500ms;
 }
 
 .btnAddCart:hover {
-	background-color: #2872b7;
-	color: white;
+	background-color: #175ea0;
 }

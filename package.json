@@ -17,6 +17,7 @@
 		"require-stack": "^1.0.2",
 		"sass": "^1.49.10",
 		"stack-trace": "^1.0.0-pre1",
+		"styled-components": "^5.3.5",
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {

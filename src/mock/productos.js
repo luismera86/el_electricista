@@ -7,6 +7,7 @@ export const productosIniciales = [
 		pictureUrl:
 			'https://http2.mlstatic.com/D_NQ_NP_2X_857137-MLA40604581692_012020-F.webp',
 		category: 'tableors-electricos',
+		stock: 4,
 	},
 	{
 		id: 2,
@@ -16,6 +17,7 @@ export const productosIniciales = [
 		pictureUrl:
 			'https://http2.mlstatic.com/D_NQ_NP_2X_857137-MLA40604581692_012020-F.webp',
 		category: 'tableors-electricos',
+		stock: 10,
 	},
 	{
 		id: 3,
@@ -25,6 +27,7 @@ export const productosIniciales = [
 		pictureUrl:
 			'https://http2.mlstatic.com/D_NQ_NP_2X_857137-MLA40604581692_012020-F.webp',
 		category: 'tableors-electricos',
+		stock: 7,
 	},
 	{
 		id: 4,
@@ -34,6 +37,7 @@ export const productosIniciales = [
 		pictureUrl:
 			'https://http2.mlstatic.com/D_NQ_NP_867235-MLA43312178993_082020-O.webp',
 		category: 'inatalciones-fijas',
+		stock: 15,
 	},
 	{
 		id: 5,
@@ -43,6 +47,7 @@ export const productosIniciales = [
 		pictureUrl:
 			'https://http2.mlstatic.com/D_NQ_NP_867235-MLA43312178993_082020-O.webp',
 		category: 'inatalciones-fijas',
+		stock: 8,
 	},
 	{
 		id: 6,
@@ -52,6 +57,7 @@ export const productosIniciales = [
 		pictureUrl:
 			'https://http2.mlstatic.com/D_NQ_NP_867235-MLA43312178993_082020-O.webp',
 		category: 'inatalciones-fijas',
+		stock: 9,
 	},
 	{
 		id: 7,
@@ -61,6 +67,7 @@ export const productosIniciales = [
 		pictureUrl:
 			'https://axa.com.ar/webaxa/24619-medium_default/lampara-led-etheos-11w-6500k-calida.jpg',
 		category: 'iluminacion',
+		stock: 23,
 	},
 	{
 		id: 8,
@@ -70,6 +77,7 @@ export const productosIniciales = [
 		pictureUrl:
 			'https://axa.com.ar/webaxa/24619-medium_default/lampara-led-etheos-11w-6500k-calida.jpg',
 		category: 'iluminacion',
+		stock: 25,
 	},
 	{
 		id: 9,
@@ -79,5 +87,6 @@ export const productosIniciales = [
 		pictureUrl:
 			'https://axa.com.ar/webaxa/24619-medium_default/lampara-led-etheos-11w-6500k-calida.jpg',
 		category: 'iluminacion',
+		stock: 20,
 	},
 ]

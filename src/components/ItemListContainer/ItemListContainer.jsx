@@ -6,9 +6,9 @@ import { useParams } from 'react-router-dom'
 
 const ItemListContainer = ({ saludo }) => {
 	const promesa = new Promise(res => {
-		setTimeout(() => {
+	
 			res(productosIniciales)
-		}, 2000)
+		
 	})
 
 	const [productos, setProductos] = useState([])
