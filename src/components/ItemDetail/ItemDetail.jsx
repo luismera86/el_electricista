@@ -1,9 +1,11 @@
 import styled from './ItemDetail.module.css'
 import ItemCount from '../ItemCount/ItemCount'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { myContext } from '../CartContext/CartContext'
 
 export const ItemDetail = ({ producto }) => {
+	const {addItem} = useContext(myContext)
 	const [state, setState] = useState(true)
 	const [intemsCart, setIntemsCart] = useState(0)
 	const { title, description, price, pictureUrl, stock, } = producto
@@ -11,6 +13,7 @@ export const ItemDetail = ({ producto }) => {
 	const onAdd= (stateCount, count) => { 
 		setState(stateCount)
 		setIntemsCart(count)
+		addItem(producto, count)
 	 }
 
 	return (

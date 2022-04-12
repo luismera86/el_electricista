@@ -1,15 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { myContext } from '../CartContext/CartContext'
+import CartItem from '../CartItem/CartItem'
 import styled from './Cart.module.css'
 
 const Cart = () => {
-	return (
-	<div className={styled.cart}>
-		<h1>GRACIAS POR COMPRAR</h1>
-		<img className={styled.img} src="https://c.tenor.com/RrkSMr0bIJ0AAAAC/jesus-bailando.gif" alt="jejej" />
-	</div>
+	const { cart, clearCart } = useContext(myContext)
 
-)
-	
+	return (
+		<div className={styled.containerCart}>
+			<div className={styled.cart}>
+				{cart.map(cart => (
+					<CartItem
+						key={cart.product.id}
+						product={cart.product}
+						qty={cart.qty}
+					/>
+				))}
+			</div>
+			{cart === '' && <p className={styled.mensaje}>El carrito está vacio</p>}
+			<button onClick={clearCart} className={styled.btnClear}>
+				Vaciar Carrito
+			</button>
+		</div>
+	)
 }
 
 export default Cart
+
+// Insertar un map del array cart para mostrar los productos del carrito

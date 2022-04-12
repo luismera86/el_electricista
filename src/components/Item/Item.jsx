@@ -1,7 +1,9 @@
-import { Link, useNavigate } from 'react-router-dom'
-import { ItemDetailContainer } from '../ItemDetailContainer/ItemDetailContainer'
+import { useNavigate } from 'react-router-dom'
 import styled from './Item.module.css'
-export const Item = ({ products }) => {
+
+	export const Item = ({ products }) => {
+
+	
 	const { id, title, description, price, pictureUrl } = products
 
 	const path = useNavigate()
