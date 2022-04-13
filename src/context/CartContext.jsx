@@ -6,6 +6,7 @@ const { Provider } = myContext
 
 const CartContext = ({ children }) => {
 	const [cart, setCart] = useState([])
+	const [cartCount, setCartCount] = useState(0)
 
 	const addItem = (product, qty) => {
 		const newProduct = {
@@ -36,8 +37,17 @@ const CartContext = ({ children }) => {
 		if (cart.find(item => item.product.id === id)) return true
 	}
 
+	const values = {
+		cart, 
+		addItem, 
+		removeItem, 
+		clearCart,
+		cartCount,
+		setCartCount,
+	}
+
 	return (
-		<Provider value={{ cart, addItem, removeItem, clearCart }}>
+		<Provider value={values}>
 			{children}
 		</Provider>
 	)

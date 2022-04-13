@@ -1,9 +1,10 @@
 import styled from './NavBar.module.css'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { CardWidget } from '../CardWidget/CardWidget'
 import { Link, NavLink } from 'react-router-dom'
 //Corregir la ruta de la imagen
 import logo from '../../assets/img/logo.png'
+import { myContext } from '../../context/CartContext'
 const NavBar = () => {
 	const category = [
 		{
@@ -32,6 +33,8 @@ const NavBar = () => {
 			setCategoryProducts(true)
 		}
 	}
+
+	const { cartCount } = useContext(myContext)
 
 	return (
 		<div className={styled.navBarContainer}>
@@ -80,7 +83,7 @@ const NavBar = () => {
 						INICIAR SESION
 					</Link>
 					<NavLink to='/cart'>
-						<CardWidget />
+						<CardWidget /> <span className={styled.cartCount} >{cartCount}</span>
 					</NavLink>
 				</section>
 			</div>
@@ -89,4 +92,3 @@ const NavBar = () => {
 }
 
 export default NavBar
-

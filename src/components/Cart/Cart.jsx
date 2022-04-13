@@ -1,10 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { myContext } from '../../context/CartContext'
 import CartItem from '../CartItem/CartItem'
 import styled from './Cart.module.css'
 
 const Cart = () => {
-	const { cart, clearCart } = useContext(myContext)
+	const { cart, clearCart, cartCount, setCartCount } = useContext(myContext)
+
+	useEffect(() => {
+		const total = cart.reduce((acc, item) => acc + item.product.price * item.qty, 0)
+		return setCartCount(total)
+	}, [cart])
+	
 
 	return (
 		<div className={styled.containerCart}>
