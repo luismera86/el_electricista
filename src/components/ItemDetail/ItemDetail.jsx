@@ -1,17 +1,14 @@
 import styled from './ItemDetail.module.css'
 import ItemCount from '../ItemCount/ItemCount'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 export const ItemDetail = ({ producto }) => {
-	const [state, setState] = useState(true)
 	const [intemsCart, setIntemsCart] = useState(0)
-	const { title, description, price, pictureUrl, stock, } = producto
+	const { title, description, price, pictureUrl, stock } = producto
 
-	const onAdd= (stateCount, count) => { 
-		setState(stateCount)
+	const onAdd = count => {
 		setIntemsCart(count)
-	 }
+	}
 
 	return (
 		<div className={styled.detailConteiner}>
@@ -27,12 +24,8 @@ export const ItemDetail = ({ producto }) => {
 					<p className={styled.shippingCost}>Costo de envio $899</p>
 					<p className={styled.availableStock}>Stock disponible {stock}</p>
 
-					{state && <ItemCount producto={producto} onAdd={onAdd} />  }
-					{state === false && <p className={styled.intemsCart}>Items en carrito {intemsCart}</p>}
-					
-					<Link className={styled.buysButton} type='button' to='/cart'>
-						Comprar ahora
-					</Link>
+					<ItemCount producto={producto} onAdd={onAdd} />
+					<p className={styled.intemsCart}>Items en carrito {intemsCart}</p>
 				</section>
 			</div>
 			<div className={styled.descriptionBox}>
