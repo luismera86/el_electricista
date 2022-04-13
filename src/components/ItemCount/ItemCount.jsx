@@ -1,32 +1,50 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { myContext } from '../../context/CartContext'
 import styled from './ItemCount.module.css'
 
 const ItemCount = ({ producto, onAdd}) => {
 	
-	
+	const { addItem } = useContext(myContext)
 	
 
 	const { stock } = producto
 	const [count, setCount] = useState(1)
+	const [state, setState] = useState(true)
 
 	const btnSum = () => (count < stock ? setCount(count + 1) : setCount(stock))
 	const btnRes = () => (count >= 1 ? setCount(count - 1) : setCount(0))
-	const addCart = () => (count <= stock && onAdd(false, count)) 
+	const addCart = () => {
+		setState(false)
+		addItem(producto, count)
+		count <= stock && onAdd(count)
+	} 
 	
 	return (
-		<div className={styled.countBox} >
-			<div className={styled.counterBox}>
-				<button className={styled.btnSum} onClick={btnSum}>
-					+
-				</button>
-				<p className={styled.countResult}>{count}</p>
-				<button className={styled.btnRes} onClick={btnRes}>
-					-
-				</button>
-			</div>
-			<button onClick={addCart} className={styled.btnAddCart}>
-				Agregar al carrito
-			</button>
+		<div>
+			{state ? (
+				<>
+					<div className={styled.counterBox}>
+						<button className={styled.btnSum} onClick={btnSum}>
+							+
+						</button>
+						<p className={styled.countResult}>{count}</p>
+						<button className={styled.btnRes} onClick={btnRes}>
+							-
+						</button>
+					</div>
+					<button onClick={addCart} className={styled.btnAddCart}>
+						Agregar al carrito
+					</button>
+				</>
+			) : (
+				''
+			)}
+			{state === false && (
+				<Link className={styled.buysButton} type='button' to='/cart'>
+					Finalizar Compra
+				</Link>
+			)}
 		</div>
 	)
 }
