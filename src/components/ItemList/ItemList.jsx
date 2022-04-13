@@ -1,7 +1,7 @@
 import styled from './ItemList.module.css'
-import { Item } from '../Item/Item'
+import Item from '../Item/Item'
 
-export const ItemList = ({ productos }) => {
+const ItemList = ({ productos }) => {
 	return (
 		<div className={styled.itemsContainer}>
 			{productos.map(products => (
@@ -10,3 +10,5 @@ export const ItemList = ({ productos }) => {
 		</div>
 	)
 }
+
+export default ItemList

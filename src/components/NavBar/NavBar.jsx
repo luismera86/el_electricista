@@ -1,8 +1,8 @@
 import styled from './NavBar.module.css'
 import { useState } from 'react'
 import { CardWidget } from '../CardWidget/CardWidget'
-import ProductsMenu from '../ProductsMenu/ProductsMenu'
 import { Link, NavLink } from 'react-router-dom'
+//Corregir la ruta de la imagen
 import logo from '../../assets/img/logo.png'
 const NavBar = () => {
 	const category = [

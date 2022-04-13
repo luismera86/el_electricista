@@ -1,9 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import styled from './Item.module.css'
 
-	export const Item = ({ products }) => {
-
-	
+const Item = ({ products }) => {
 	const { id, title, description, price, pictureUrl } = products
 
 	const path = useNavigate()
@@ -23,3 +21,5 @@ import styled from './Item.module.css'
 		</div>
 	)
 }
+
+export default Item

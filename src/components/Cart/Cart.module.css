@@ -33,7 +33,28 @@
     background-color: #175ea0;
 }
 
+.voidCart{
+    width: 9rem;
+    margin-top: 3rem;
+}
 .mensaje{
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.btnReturn{
+    font-size: 1rem;
+	color: white;
+	background-color: #2872b7;
+	border: none;
+	cursor: pointer;
+	padding: 0.3rem 0.3rem;
+	transition: 500ms;
+    width: 12rem;
+    margin-top: 3rem;
+}
+
+.btnReturn:hover{
+    background-color: #175ea0;
+}
+

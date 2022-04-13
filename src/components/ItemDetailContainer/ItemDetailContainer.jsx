@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { ItemDetail } from '../ItemDetail/ItemDetail'
+import ItemDetail  from '../ItemDetail/ItemDetail'
 import { productosIniciales } from '../../mock/productos.js'
 import { useParams } from 'react-router-dom'
 
-export const ItemDetailContainer = () => {
+const ItemDetailContainer = () => {
 	const promesa = new Promise(res => {
 		res(productosIniciales)
 	})
@@ -30,6 +30,4 @@ export const ItemDetailContainer = () => {
 	)
 }
 
-/* useEffect(() => {
-  promesa.then(producto => 
-    setProducto(producto))}, []) */
+export default ItemDetailContainer

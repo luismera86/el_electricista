@@ -1,3 +1,9 @@
+
+.countBox{
+	display: flex;
+	flex-direction: column;
+}
+
 .counterBox {
 	display: flex;
 	flex-direction: row;

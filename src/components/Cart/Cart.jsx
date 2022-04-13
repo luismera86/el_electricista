@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { myContext } from '../CartContext/CartContext'
+import { myContext } from '../../context/CartContext'
 import CartItem from '../CartItem/CartItem'
 import styled from './Cart.module.css'
 
@@ -17,14 +17,19 @@ const Cart = () => {
 					/>
 				))}
 			</div>
-			{cart === '' && <p className={styled.mensaje}>El carrito está vacio</p>}
-			<button onClick={clearCart} className={styled.btnClear}>
+			{cart == '' && 
+			<>
+			<img className={styled.voidCart} src="https://cdn3.iconfinder.com/data/icons/shopping-and-ecommerce-29/90/empty_cart-512.png" alt="Carrito Vacio" />
+			<p className={styled.mensaje}>El carrito está vacio</p>
+			</>}
+			{cart == '' ? <button className={styled.btnReturn}>Volver al menu princila</button> : <button onClick={clearCart} className={styled.btnClear}>
 				Vaciar Carrito
-			</button>
+			</button>}
+			
 		</div>
 	)
 }
 
 export default Cart
 
-// Insertar un map del array cart para mostrar los productos del carrito
+

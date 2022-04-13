@@ -11,13 +11,24 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	height: 25rem;
+}
+
+.imgBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border: 1px solid #2872b7;
+	width: 22rem;
+	padding: 1rem;
+	position: relative;
+	
+	
 }
 
 .imgProduct {
-	border: solid 1px rgba(8, 70, 241, 0.274);
-	padding: 1rem;
-	border-radius: 0.5rem;
-	width: 20rem;
+	position: relative;
+	
 }
 
 .productBox {
@@ -70,7 +81,6 @@
 
 .buysButton:hover {
 	background-color: #175ea0;
-	
 }
 
 .descriptionBox {
@@ -81,9 +91,7 @@
 	padding-right: 8rem;
 }
 
-.intemsCart{
+.intemsCart {
 	color: rgb(15, 148, 48);
 	font-weight: 800;
 }
-
-

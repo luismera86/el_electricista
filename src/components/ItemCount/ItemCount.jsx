@@ -14,7 +14,7 @@ const ItemCount = ({ producto, onAdd}) => {
 	const addCart = () => (count <= stock && onAdd(false, count)) 
 	
 	return (
-		<div>
+		<div className={styled.countBox} >
 			<div className={styled.counterBox}>
 				<button className={styled.btnSum} onClick={btnSum}>
 					+

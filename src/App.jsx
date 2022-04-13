@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import NavBar from './components/NavBar/NavBar'
 import Cart from './components/Cart/Cart.jsx'
-import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
-import CartContext from './components/CartContext/CartContext'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import CartContext from './context/CartContext'
 
 function App() {
 	return (
