@@ -83,8 +83,9 @@ const NavBar = () => {
 						INICIAR SESION
 					</Link>
 					<NavLink to='/cart'>
-						<CardWidget /> <span className={styled.cartCount} >{cartCount}</span>
+						<CardWidget />
 					</NavLink>
+					<div className={styled.cartCount} >{cartCount}</div>
 				</section>
 			</div>
 		</div>

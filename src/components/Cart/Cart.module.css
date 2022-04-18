@@ -19,6 +19,7 @@
 
 .btnClear{
     font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
 	color: white;
 	background-color: #2872b7;
 	border: none;
@@ -44,6 +45,7 @@
 
 .btnReturn{
     font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
 	color: white;
 	background-color: #2872b7;
 	border: none;
@@ -56,5 +58,11 @@
 
 .btnReturn:hover{
     background-color: #175ea0;
+}
+
+.totalPrice{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 

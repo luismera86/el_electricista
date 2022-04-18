@@ -16,20 +16,11 @@
 
 .imgBox {
 	display: flex;
-	flex-direction: column;
+	border: 1px solid #175ea0;
+	width: max-content;
 	justify-content: center;
-	border: 1px solid #2872b7;
-	width: 22rem;
-	padding: 1rem;
-	position: relative;
-	
-	
 }
 
-.imgProduct {
-	position: relative;
-	
-}
 
 .productBox {
 	padding-left: 0.5rem;

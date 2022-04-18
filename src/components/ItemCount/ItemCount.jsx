@@ -11,6 +11,7 @@ const ItemCount = ({ producto, onAdd}) => {
 	const { stock } = producto
 	const [count, setCount] = useState(1)
 	const [state, setState] = useState(true)
+	
 
 	const btnSum = () => (count < stock ? setCount(count + 1) : setCount(stock))
 	const btnRes = () => (count >= 1 ? setCount(count - 1) : setCount(0))
