@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { myContext } from '../../context/CartContext'
 import CartItem from '../CartItem/CartItem'
 import styled from './Cart.module.css'
@@ -28,7 +29,7 @@ const Cart = () => {
 				</>
 			)}
 			{cart == '' ? (
-				<button className={styled.btnReturn}>Volver al menu principal</button>
+				<Link to='/' className={styled.btnReturn}>Volver al menu principal</Link>
 			) : (
 				<>
 				<button onClick={clearCart} className={styled.btnClear}>
