@@ -1,15 +1,11 @@
 import styled from './ItemListContainer.module.css'
 import { useEffect, useState } from 'react'
 import ItemList from '../ItemList/ItemList'
-import { productosIniciales } from '../../mock/productos.js'
 import { useParams } from 'react-router-dom'
+import { db } from '../../firebase/firebase'
+import { getDocs, collection, query, where } from 'firebase/firestore'
 
 const ItemListContainer = ({ saludo }) => {
-	const promesa = new Promise(res => {
-		setTimeout(() => {
-			res(productosIniciales)
-		}, 2000)
-	})
 
 	const [productos, setProductos] = useState([])
 	const [loadig, setLoading] = useState(true)
@@ -17,15 +13,71 @@ const ItemListContainer = ({ saludo }) => {
 	const { name } = useParams()
 
 	useEffect(() => {
-		promesa.then(productos => {
-			if (name) {
-				setProductos(productos.filter(producto => producto.category === name))
-			} else {
-				setProductos(productos)
-			}
-			setLoading(false)
-		})
+		if (name) {
+			let searchParam = name;
+        	const productsCollection = collection(db,"productos")
+        	const q = query(productsCollection,where("category","==",searchParam),);
+        	getDocs(q)
+			.then((result)=>{
+				const docs = result.docs
+				const lista = docs.map((producto)=>{
+					const id = producto.id
+					const product={
+						id,
+						...producto.data()
+					}
+					return product
+				})
+				setProductos(lista)
+				setLoading(false)
+			})
+		} else {
+			const productsCollection = collection(db, 'productos')
+		
+		getDocs(productsCollection)
+			.then( result => {
+				const docs = result.docs
+				const productsList = docs.map(doc => {
+					const data = doc.data()
+					const id = doc.id
+					const products = {
+						id, 
+						...data
+					}
+					return products
+				})
+				
+		setProductos(productsList)
+		setLoading(false)
+			})
+		}
 	}, [name])
+
+/* 	useEffect(() => {
+		const productsCollection = collection(db, 'productos')
+		
+		getDocs(productsCollection)
+			.then( result => {
+				const docs = result.docs
+				const productsList = docs.map(doc => {
+					const data = doc.data()
+					const id = doc.id
+					const products = {
+						id, 
+						...data
+					}
+					return products
+				})
+				
+		setProductos(productsList)
+		setLoading(false)
+		console.log(productsList)		
+	})
+	}, [])
+ */
+
+
+
 
 	return (
 		<div className={styled.itemListContainerBox}>
