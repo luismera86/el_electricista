@@ -53,29 +53,6 @@ const ItemListContainer = ({ saludo }) => {
 		}
 	}, [name])
 
-/* 	useEffect(() => {
-		const productsCollection = collection(db, 'productos')
-		
-		getDocs(productsCollection)
-			.then( result => {
-				const docs = result.docs
-				const productsList = docs.map(doc => {
-					const data = doc.data()
-					const id = doc.id
-					const products = {
-						id, 
-						...data
-					}
-					return products
-				})
-				
-		setProductos(productsList)
-		setLoading(false)
-		console.log(productsList)		
-	})
-	}, [])
- */
-
 
 
 

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { myContext } from '../../context/CartContext'
 import styled from './CartItem.module.css'
 
-const CartItem = ({ product, qty }) => {
+const CartItem = ({ product, qty, itemsStock}) => {
 	const { removeItem, quantityModify, subTotalPrice } = useContext(myContext)
 	const { title, price, pictureUrl, stock, id } = product
 	const [count, setCount] = useState(qty)
@@ -21,6 +21,7 @@ const CartItem = ({ product, qty }) => {
 	// Envia la cantidad de productos al context para que se actualice el carrito
 	useEffect(() => {
 		quantityModify(id, count)
+		itemsStock(count, id)
 	}, [count])
 
 	const btnSum = () => (count < stock ? setCount(count + 1) : setCount(stock))
