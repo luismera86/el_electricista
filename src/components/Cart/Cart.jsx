@@ -1,46 +1,49 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { myContext } from '../../context/CartContext'
 import CartItem from '../CartItem/CartItem'
 import styled from './Cart.module.css'
-import { addDoc, collection, serverTimestamp, updateDoc, doc } from 'firebase/firestore'
+import {
+	addDoc,
+	collection,
+	serverTimestamp,
+	updateDoc,
+	doc,
+} from 'firebase/firestore'
 import { db } from '../../firebase/firebase'
+import Formulario from '../Formulario/Formulario'
 
 const Cart = () => {
 	const { cart, clearCart, totalPrice } = useContext(myContext)
 	const [idVenta, setIdVenta] = useState('')
-
-	const itemsStock = (items) => {
-		const newStock = items
-		
-	}
-	useEffect(() => {
+	const [showFormn, setShowFormn] = useState(false)
 	
-		const updateCollection = doc(db, 'productos', 'id')
-		updateDoc(updateCollection, {stock: newStock})
+
+	const finalizarCompra = (user) => {
+		const ventaCollection = collection(db, 'ventas')
+		addDoc(ventaCollection, {
+			user,
+			items: cart,
+			data: serverTimestamp(),
+			totalPrice,
+		}).then(result => {
+			setIdVenta(result.id)
+		})
+
+		cart.forEach(p => {
+			const updateCollection = doc(db, 'productos', p.product.id)
+			updateDoc(updateCollection, { stock: p.product.stock - p.qty })
+		})
+
+		clearCart()
+	}
+
+	const handleFinish = () => {
+		setShowFormn(true)
+	}
 
 
-
-}, [])
-
-
-
-
-	/* useEffect(() => {
-		const checkout = () => {
-			const ventaCollection = collection(db, 'ventas')
-			addDoc(ventaCollection, {
-				user,
-				items: cart,
-				date: serverTimestamp(),
-				total: totalPrice,
-				id: idVenta,
-			}).then(resutl => {
-				setIdVenta(resutl.id)
-			})
-		}
-		checkout()
-	}, []) */
+	
 
 	return (
 		<div className={styled.containerCart}>
@@ -50,9 +53,9 @@ const Cart = () => {
 						key={cart.product.id}
 						product={cart.product}
 						qty={cart.qty}
-						itemsStock={itemsStock}
 					/>
 				))}
+				
 			</div>
 			{cart == '' && (
 				<>
@@ -74,17 +77,18 @@ const Cart = () => {
 						Vaciar Carrito
 					</button>
 					<p className={styled.totalPrice}>Total a pagar ${totalPrice} </p>
-					<form>
-						<label htmlFor=''>Nombre y Apellido</label>
-						<input type='text' />
-						<label htmlFor=''>Email</label>
-						<input type='text'/>
-						<button className={styled.btnCheckout}>Comprar</button>
-					</form>
+					<button onClick={handleFinish} className={styled.btnFinish}> Finalizar Compra</button>
+					
+					
 				</>
 			)}
+			{showFormn && <Formulario finalizarCompra={finalizarCompra} setShowFormn={setShowFormn} /> }
+			
+
+
 		</div>
 	)
 }
+
 
 export default Cart
