@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { myContext } from '../../context/CartContext'
 import CartItem from '../CartItem/CartItem'
@@ -47,7 +47,7 @@ const Cart = () => {
 
 	return (
 		<div className=' container d-flex flex-column align-items-center cart'>
-			<div className=' container d-flex  w-100 align-content-between'>
+			<div className=' container d-flex flex-column w-100 align-content-between'>
 				{cart.map(cart => (
 					<CartItem
 						key={cart.product.id}

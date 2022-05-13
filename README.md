@@ -36,6 +36,11 @@ Listo operación completada.
 
 ![](https://i.ibb.co/ZdZNyqG/Captura-de-pantalla-2022-05-12-235140.png)
 
+###Extras 
+
+- Se agrego validación de formulario, para completar todos los datos.
+- Se agrego funcionalidad de Local Storage para que no se pierda la información del carrito al recaragar el sitio.
+
 ###Creditos 
 
 Alumno: Luis Alejandro Mera  @luismera86

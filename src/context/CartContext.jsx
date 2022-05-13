@@ -9,9 +9,26 @@ const CartContext = ({ children }) => {
 	const [cartCount, setCartCount] = useState(0)
 	const [totalPrice, setTotalPrice] = useState(0)
 
+	useEffect(() => { 
+		const obtenerCart = () => { 
+			const newCart = JSON.parse(localStorage.getItem('cart')) 
+			setCart(newCart)
+		 }
+		obtenerCart()
+		
+	}, [])
+	
 	useEffect(() => {
-		const numberProductCart = cart.length
-		setCartCount(numberProductCart)
+		localStorage.setItem('cart', JSON.stringify(cart))
+	}, [cart])
+
+	useEffect(() => {
+		const total = cart.reduce((acc, item) => {
+			return acc + item.qty
+		}, 0)
+		setCartCount(total)
+		
+	
 	}, [cart])
 
 	const addItem = (product, qty) => {
@@ -83,6 +100,7 @@ const CartContext = ({ children }) => {
 		quantityModify,
 		subTotalPrice,
 		totalPrice,
+		setCart,
 	}
 
 	return <Provider value={values}>{children}</Provider>
