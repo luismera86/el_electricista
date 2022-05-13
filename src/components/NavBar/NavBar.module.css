@@ -55,6 +55,7 @@
 .navLink:hover {
 	background-color: #0a61b3;
 	box-shadow: 1px 1px 2px #00000067;
+	color: white;
 }
 
 .acountBox {
@@ -69,11 +70,12 @@
 	text-decoration: none;
 	color: white;
 	font-size: 0.7rem;
+	
 }
 
 .cartCount{
 	text-decoration: none;
 	color: white;
 	font-size: 0.7rem;
-	margin-left: -2.5rem;
+	margin-right: 5rem;
 }

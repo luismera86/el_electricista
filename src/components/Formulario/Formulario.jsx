@@ -1,35 +1,56 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Formulario = ({finalizarCompra, setShowFormn}) => {
-    const [user, setUser] = useState({
-		name: '',
-		email: '',
-	})
+const Formulario = ({ finalizarCompra, setUser, user }) => {
+	const [nombre, setNombre] = useState('')
+	const [email, setEmail] = useState('')
 
-    const handledSubmit = (e) => {
-        e.preventDefault()
-        finalizarCompra(user)
-        setShowFormn(false)
-    }
+	useEffect(() => {
+		setUser({
+			nombre: nombre,
+			email: email,
+		})
+	}, [nombre, email])
 
-    const handleChangeInput = (target) => {
-        setUser({...user, [target.name]: target.value})
-    }
+	const handledSubmit = e => {
+		e.preventDefault()
 
-  return (
-    <div>
-        <form
-        onChange={({target}) => {handleChangeInput(target)}}
-        onSubmit={handledSubmit}
-        >
-            <label>Nombre y Apellido</label>
-            <input name='name' value={user.name} type="text" />
-            <label>Email</label>
-            <input name='email' value={user.email} type="mail" />
-            <button type='submit'>Finalizar Compra</button> 
-        </form>    
-    </div>
-  )
+		finalizarCompra()
+	}
+
+	return (
+		<div className=' container'>
+			<h2>Completa tus datos para finalizar la compra</h2>
+			<form onSubmit={handledSubmit} className='container d-flex flex-column'>
+				<label htmlFor='nombre'>Nombre y Apellido</label>
+				<input
+					id='nombre'
+					name='name'
+					value={nombre}
+					type='text'
+					className=' form-control w-50 mt-2 mb-2'
+					placeholder='Ingrese su Nombre y Apellido'
+					onChange={e => {
+						setNombre(e.target.value)
+					}}
+				/>
+				<label htmlFor='mail'>Email</label>
+				<input
+					id='mail'
+					name='email'
+					value={email}
+					type='mail'
+					className=' form-control w-50 mt-2 mb-2'
+					placeholder='Ingrese su e-mail'
+					onChange={e => {
+						setEmail(e.target.value)
+					}}
+				/>
+				<button type='submit' className=' btn btn-primary w-25 mt-2'>
+					Finalizar Compra
+				</button>
+			</form>
+		</div>
+	)
 }
 
 export default Formulario

@@ -12,14 +12,14 @@ import {
 } from 'firebase/firestore'
 import { db } from '../../firebase/firebase'
 import Formulario from '../Formulario/Formulario'
+import swal from 'sweetalert'
 
 const Cart = () => {
 	const { cart, clearCart, totalPrice } = useContext(myContext)
 	const [idVenta, setIdVenta] = useState('')
-	const [showFormn, setShowFormn] = useState(false)
-	
+	const [user, setUser] = useState('')
 
-	const finalizarCompra = (user) => {
+	const finalizarCompra = () => {
 		const ventaCollection = collection(db, 'ventas')
 		addDoc(ventaCollection, {
 			user,
@@ -28,6 +28,13 @@ const Cart = () => {
 			totalPrice,
 		}).then(result => {
 			setIdVenta(result.id)
+			swal({
+				title: 'Operación Completada',
+				text: `Total pagado $${totalPrice}
+				 	   ID de compra: ${result.id}`,
+				icon: 'success',
+				button: 'Volver al carrito',
+			})
 		})
 
 		cart.forEach(p => {
@@ -38,16 +45,9 @@ const Cart = () => {
 		clearCart()
 	}
 
-	const handleFinish = () => {
-		setShowFormn(true)
-	}
-
-
-	
-
 	return (
-		<div className={styled.containerCart}>
-			<div className={styled.cart}>
+		<div className=' container d-flex flex-column align-items-center cart'>
+			<div className=' container d-flex  w-100 align-content-between'>
 				{cart.map(cart => (
 					<CartItem
 						key={cart.product.id}
@@ -55,7 +55,6 @@ const Cart = () => {
 						qty={cart.qty}
 					/>
 				))}
-				
 			</div>
 			{cart == '' && (
 				<>
@@ -77,18 +76,16 @@ const Cart = () => {
 						Vaciar Carrito
 					</button>
 					<p className={styled.totalPrice}>Total a pagar ${totalPrice} </p>
-					<button onClick={handleFinish} className={styled.btnFinish}> Finalizar Compra</button>
-					
-					
+
+					<Formulario
+						finalizarCompra={finalizarCompra}
+						setUser={setUser}
+						user={user}
+					/>
 				</>
 			)}
-			{showFormn && <Formulario finalizarCompra={finalizarCompra} setShowFormn={setShowFormn} /> }
-			
-
-
 		</div>
 	)
 }
-
 
 export default Cart

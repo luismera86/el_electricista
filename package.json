@@ -19,6 +19,8 @@
 		"sass": "^1.49.10",
 		"stack-trace": "^1.0.0-pre1",
 		"styled-components": "^5.3.5",
+		"sweetalert": "^2.1.2",
+		"sweetalert2": "^11.4.14",
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {

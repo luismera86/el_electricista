@@ -72,6 +72,7 @@
 
 .buysButton:hover {
 	background-color: #175ea0;
+	color: white!important;
 }
 
 .descriptionBox {

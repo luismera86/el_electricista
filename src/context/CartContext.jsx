@@ -9,13 +9,11 @@ const CartContext = ({ children }) => {
 	const [cartCount, setCartCount] = useState(0)
 	const [totalPrice, setTotalPrice] = useState(0)
 
-	// Revisa la cantidad de productos en el carrito
 	useEffect(() => {
 		const numberProductCart = cart.length
 		setCartCount(numberProductCart)
 	}, [cart])
 
-	// Agrega productos al carrito
 	const addItem = (product, qty) => {
 		const newProduct = {
 			product,
@@ -33,24 +31,20 @@ const CartContext = ({ children }) => {
 		}
 	}
 
-	// Elimina porductos del carrito
 	const removeItem = itemId => {
 		const newCart = cart.filter(item => item.product.id !== itemId)
 		setCart(newCart)
 	}
 
-	// Vacia el carrito
 	const clearCart = () => {
 		const cartClear = []
 		setCart(cartClear)
 	}
 
-	// Revisa si el producto ya esta en el carrito
 	const isInCart = id => {
 		if (cart.find(item => item.product.id === id)) return true
 	}
 
-	// Modifica la cantidad de items por producto que estan en el carrito
 	const quantityModify = (id, qty) => {
 		const newCart = cart.map(item => {
 			if (item.product.id === id) {
@@ -61,7 +55,6 @@ const CartContext = ({ children }) => {
 		setCart(newCart)
 	}
 
-	// Agrega a cada producto un subtotal
 	const subTotalPrice = (id, price) => {
 		const newCart = cart.map(item => {
 			if (item.product.id === id) {
@@ -72,7 +65,6 @@ const CartContext = ({ children }) => {
 		setCart(newCart)
 	}
 
-	// Calcula el total de la suma de todos los subtotales de los productos en el carrito
 	useEffect(() => {
 		const total = cart.reduce((acc, item) => {
 			return acc + item.subTotal

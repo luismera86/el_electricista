@@ -25,10 +25,7 @@ function App() {
 								<ItemListContainer saludo='Bienvendios a la tienda online de El Electrisista' />
 							}
 						/>
-						<Route
-							path='/producto/:id'
-							element={<ItemDetailContainer />}
-						/>
+						<Route path='/producto/:id' element={<ItemDetailContainer />} />
 						<Route path='/cart' element={<Cart />} />
 					</Routes>
 				</div>

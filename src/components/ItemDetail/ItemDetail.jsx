@@ -14,17 +14,17 @@ const ItemDetail = ({ producto }) => {
 	}
 
 	return (
-		<div className={styled.detailConteiner}>
-			<div className={styled.product}>
-				<div className={styled.imgBox}>
-					<img className={styled.imgProduct} src={pictureUrl} />
+		<>
+			<div className=' container-fluid border border-2 border-dark mt-3 d-flex justify-content-between flex-sm-column flex-xl-row flex-column'>
+				<div className=' container border border-dark w-50 m-4 d-flex'>
+					<img className=' img-fluid' src={pictureUrl} />
 				</div>
-				<div className={styled.productBox}>
+				<div className='container m-4'>
 					<h4 className={styled.productCategorie}>Categoría/ </h4>
 					<h2 className={styled.nameProduct}>{title}</h2>
 					<p className={styled.priceProduct}>Precio $ {price}</p>
 				</div>
-				<section className={styled.buysBox}>
+				<section className='container d-flex flex-column w-50 m-4 justify-content-center align-items-center'>
 					<h2 className={styled.shippingDate}>Fecha de envío 10 de Abril</h2>
 					<p className={styled.shippingCost}>Costo de envio $899</p>
 					<p className={styled.availableStock}>
@@ -36,10 +36,11 @@ const ItemDetail = ({ producto }) => {
 					<p className={styled.intemsCart}>Items en carrito {intemsCart}</p>
 				</section>
 			</div>
-			<div className={styled.descriptionBox}>
+			<div className=' container mt-3'>
+				<h3>Descripción del producto</h3>
 				<p className={styled.descriptionProduct}>{description}</p>
 			</div>
-		</div>
+		</>
 	)
 }
 

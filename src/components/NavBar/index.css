@@ -1,0 +1,22 @@
+.navbar{
+    background-color: #2872b7;
+}
+
+.dropdown-menu{
+    background-color: #2872b7;
+    color: white;
+}
+.navbarDropdown{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-item{
+    color: white;
+}
+
+.dropdown-item:hover{
+    background-color: #0a61b3;
+    color: white;
+}
+

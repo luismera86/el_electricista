@@ -42,6 +42,7 @@
 	cursor: pointer;
 	padding: 0.1rem 1rem;
 	transition: 500ms;
+	margin: 1rem;
 }
 
 .btnSum:hover {
@@ -51,7 +52,7 @@
 .countResult {
 	font-size: 1.2rem;
 	color: #2872b7;
-    margin: 0rem -3rem;
+	margin: .1rem;
 }
 
 .btnRes {
@@ -62,6 +63,7 @@
 	cursor: pointer;
 	padding: 0.1rem 1rem;
 	transition: 500ms;
+	margin: 1rem;
 }
 
 .btnRes:hover {
@@ -76,6 +78,7 @@
 	cursor: pointer;
 	padding: .3rem;
 	transition: 500ms;
+	
 }
 
 .deleteButton:hover{

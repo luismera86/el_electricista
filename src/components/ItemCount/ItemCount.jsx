@@ -3,15 +3,12 @@ import { Link } from 'react-router-dom'
 import { myContext } from '../../context/CartContext'
 import styled from './ItemCount.module.css'
 
-const ItemCount = ({ producto, onAdd}) => {
-	
+const ItemCount = ({ producto, onAdd }) => {
 	const { addItem } = useContext(myContext)
-	
 
 	const { stock } = producto
 	const [count, setCount] = useState(1)
 	const [state, setState] = useState(true)
-	
 
 	const btnSum = () => (count < stock ? setCount(count + 1) : setCount(stock))
 	const btnRes = () => (count >= 1 ? setCount(count - 1) : setCount(0))
@@ -19,8 +16,8 @@ const ItemCount = ({ producto, onAdd}) => {
 		setState(false)
 		addItem(producto, count)
 		count <= stock && onAdd(count)
-	} 
-	
+	}
+
 	return (
 		<div>
 			{state ? (

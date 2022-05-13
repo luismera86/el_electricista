@@ -6,7 +6,6 @@ import { db } from '../../firebase/firebase'
 import { getDocs, collection, query, where } from 'firebase/firestore'
 
 const ItemListContainer = ({ saludo }) => {
-
 	const [productos, setProductos] = useState([])
 	const [loadig, setLoading] = useState(true)
 
@@ -14,17 +13,16 @@ const ItemListContainer = ({ saludo }) => {
 
 	useEffect(() => {
 		if (name) {
-			let searchParam = name;
-        	const productsCollection = collection(db,"productos")
-        	const q = query(productsCollection,where("category","==",searchParam),);
-        	getDocs(q)
-			.then((result)=>{
+			let searchParam = name
+			const productsCollection = collection(db, 'productos')
+			const q = query(productsCollection, where('category', '==', searchParam))
+			getDocs(q).then(result => {
 				const docs = result.docs
-				const lista = docs.map((producto)=>{
+				const lista = docs.map(producto => {
 					const id = producto.id
-					const product={
+					const product = {
 						id,
-						...producto.data()
+						...producto.data(),
 					}
 					return product
 				})
@@ -33,28 +31,24 @@ const ItemListContainer = ({ saludo }) => {
 			})
 		} else {
 			const productsCollection = collection(db, 'productos')
-		
-		getDocs(productsCollection)
-			.then( result => {
+
+			getDocs(productsCollection).then(result => {
 				const docs = result.docs
 				const productsList = docs.map(doc => {
 					const data = doc.data()
 					const id = doc.id
 					const products = {
-						id, 
-						...data
+						id,
+						...data,
 					}
 					return products
 				})
-				
-		setProductos(productsList)
-		setLoading(false)
+
+				setProductos(productsList)
+				setLoading(false)
 			})
 		}
 	}, [name])
-
-
-
 
 	return (
 		<div className={styled.itemListContainerBox}>
