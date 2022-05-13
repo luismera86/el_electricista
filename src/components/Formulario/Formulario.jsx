@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import swal from 'sweetalert'
 
-const Formulario = ({ finalizarCompra, setUser, user }) => {
+const Formulario = ({ finalizarCompra, setUser }) => {
 	const [nombre, setNombre] = useState('')
 	const [email, setEmail] = useState('')
 
@@ -13,8 +14,12 @@ const Formulario = ({ finalizarCompra, setUser, user }) => {
 
 	const handledSubmit = e => {
 		e.preventDefault()
-
-		finalizarCompra()
+		//Validación del formulario
+		if([nombre, email].includes('')){
+			swal('Todos los campos son obligatorios')
+		}else{
+			finalizarCompra()
+		}
 	}
 
 	return (
