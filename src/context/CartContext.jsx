@@ -41,10 +41,13 @@ const CartContext = ({ children }) => {
 	}
 	
 	useEffect(() => {
+
+		if(cart.length > 0) {
 		const total = cart.reduce((acc, item) => {
 			return acc + item.qty
 		}, 0)
 		setCartCount(total)
+	}
 		
 	
 	}, [cart])
@@ -83,10 +86,13 @@ const CartContext = ({ children }) => {
 	}
 
 	useEffect(() => {
-		const total = cart.reduce((acc, item) => {
-			return acc + item.subTotal
-		}, 0)
-		setTotalPrice(total)
+
+		if(cart.length > 0){ 
+			const total = cart.reduce((acc, item) => {
+				return acc + item.subTotal
+			}, 0)
+			setTotalPrice(total)
+		}
 	}, [cart])
 
 	const values = {
