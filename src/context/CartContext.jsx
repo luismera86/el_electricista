@@ -22,21 +22,13 @@ const CartContext = ({ children }) => {
 		localStorage.setItem('cart', JSON.stringify(cart))
 	}, [cart])
 
-	useEffect(() => {
-		const total = cart.reduce((acc, item) => {
-			return acc + item.qty
-		}, 0)
-		setCartCount(total)
-		
 	
-	}, [cart])
-
 	const addItem = (product, qty) => {
 		const newProduct = {
 			product,
 			qty,
 		}
-
+		
 		if (isInCart(product.id)) {
 			const porductFind = cart.find(item => item.product.id === product.id)
 			const index = cart.indexOf(porductFind)
@@ -47,7 +39,15 @@ const CartContext = ({ children }) => {
 			setCart([...cart, newProduct])
 		}
 	}
-
+	
+	useEffect(() => {
+		const total = cart.reduce((acc, item) => {
+			return acc + item.qty
+		}, 0)
+		setCartCount(total)
+		
+	
+	}, [cart])
 	const removeItem = itemId => {
 		const newCart = cart.filter(item => item.product.id !== itemId)
 		setCart(newCart)
