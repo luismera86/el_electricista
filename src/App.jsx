@@ -16,13 +16,13 @@ function App() {
 						<Route
 							path='/'
 							element={
-								<ItemListContainer saludo='Bienvendios a la tienda online de El Electrisista' />
+								<ItemListContainer saludo='Bienvenidos a la tienda online de El Electrisista' />
 							}
 						/>
 						<Route
 							path='/category/:name'
 							element={
-								<ItemListContainer saludo='Bienvendios a la tienda online de El Electrisista' />
+								<ItemListContainer saludo='Bienvenidos a la tienda online de El Electrisista' />
 							}
 						/>
 						<Route path='/producto/:id' element={<ItemDetailContainer />} />
