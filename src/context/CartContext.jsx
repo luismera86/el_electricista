@@ -11,7 +11,7 @@ const CartContext = ({ children }) => {
 
 	useEffect(() => { 
 		const obtenerCart = () => { 
-			const newCart = JSON.parse(localStorage.getItem('cart')) 
+			const newCart = JSON.parse(localStorage.getItem('cart')) ?? [] 
 			setCart(newCart)
 		 }
 		obtenerCart()
