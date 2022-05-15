@@ -10,13 +10,13 @@ Es un proyecto de un e-commerce realizado para el curso de React JS en la carrer
 - [SweetAlert](https://sweetalert.js.org/guides/)
 - [Firebase](https://firebase.google.com/ "Firebase")
 
-##Instalación 
+## Instalación 
 - Clonar repositorio.
 -  Abrir la consola en la carpeta del repositorio clonado y ejecutar el comando `npm install`.
 - Ejecutar el comando `npm start`.
 - Versión online https://el-electricista.vercel.app/
 
-##Instrucciones de uso
+## Instrucciones de uso
 En la pantalla de inicio cuenta con todos los productos disponibles de la tienda en los cuales puede ingresar para agregar la cantidad de productos que desee agregar al carrito. 
 ![](https://i.ibb.co/F52Z5Xn/Captura-de-pantalla-2022-05-12-184941.png)
 
@@ -37,12 +37,12 @@ Listo operación completada.
 
 ![](https://i.ibb.co/ZdZNyqG/Captura-de-pantalla-2022-05-12-235140.png)
 
-##Extras 
+## Extras 
 
 - Se agrego validación de formulario, para completar todos los datos.
 - Se agrego funcionalidad de Local Storage para que no se pierda la información del carrito al recaragar el sitio.
 
-##Creditos 
+## Creditos 
 
 Alumno: Luis Alejandro Mera  @luismera86
 Profesor: Alejandro Moises @alejandromoises02
