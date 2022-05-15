@@ -42,11 +42,14 @@ const CartContext = ({ children }) => {
 	
 	useEffect(() => {
 
-		
+		if(cart.length > 0) {
 		const total = cart.reduce((acc, item) => {
 			return acc + item.qty
 		}, 0)
 		setCartCount(total)
+	}else{
+		setCartCount(0)
+	}	
 	
 		
 	
