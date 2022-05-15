@@ -17,7 +17,7 @@ Es un proyecto de un e-commerce realizado para el curso de React JS en la carrer
 
 ###Instrucciones de uso
 En la pantalla de inicio cuenta con todos los productos disponibles de la tienda en los cuales puede ingresar para agregar la cantidad de productos que desee agregar al carrito. 
-![](https://i.ibb.co/5B2V582/Captura-de-pantalla-2022-05-12-184941.png)
+![](https://i.ibb.co/F52Z5Xn/Captura-de-pantalla-2022-05-12-184941.png)
 
 
 En caso de necesitar filtrar por categoría se puede dirigir al botón de productos en la barra de navegación superior y seleccionar la categoría que desea.
@@ -30,7 +30,7 @@ Una ves en el item seleccionado debe elegir la cantidad de productos que desea, 
 
 En el carrito solo debes completar el formulario y hacer click en finalizar compra.
 
-![](https://i.ibb.co/k6g7Sj7/Captura-de-pantalla-2022-05-12-234754.png)
+![](https://i.ibb.co/6XNN43b/Captura-de-pantalla-2022-05-12-234754.png)
 
 Listo operación completada.
 
